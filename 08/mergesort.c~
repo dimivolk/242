@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define ARRAY_MAX 100000
+
+void merge_sort(int *a, int *w, int n) {
+    if(n < 2) {
+        return;
+    }
+    merge_sort(a, w, n/2);
+    merge_sort(a+(n/2), w, n-(n/2));
+    
+
+}
+
+void merge(int *array, int *workspace, int len) {
+    int i, j, pos;
+    i = 0;
+    j = len/2;
+    pos = 0;
+
+    while(i <((len/2)-1) && j < (len-1)) {
+        if(array[i] <= array[j]) {
+            workspace[pos++] = array[i++];
+        }else{
+            workspace[pos++] = array[j++];
+        }
+    }
+
+    while(i < ((len/2-1) {
+        workspace[pos++] = array[i++];
+    }
+    
+}
+            
+int main(void) {
+    clock_t start, end;
+
+
+}
