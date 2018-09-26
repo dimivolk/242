@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "mylib.h"
+#include "graph.h"
+
+struct graphrec{
+    int edges;
+    int size;
+    int vertices;
