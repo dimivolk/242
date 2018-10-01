@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "bst.h"
+#include "mylib.h"
+
+struct bst_node {
+    char *key;
+    bst left;
+    bst right;
+};
+
+bst bst_free(bst b) {
+    if(b == NULL) {
+        return b;
+    } else {
+        bst_free(b->left);
+        bst_free(b->right);
+
+        free(b->key);
+        free(b);
+    }
+    return b;
+}
+void bst_inorder(bst b, void f(char *str)) {
+    if(b == NULL) {
+        return;
+    }
+    bst_inorder(b->left, f);
+    f(b->key);
+    bst_inorder(b->right, f);
+}
+    
+bst    bst_insert(bst b, char *str);
+bst    bst_new();
+void   bst_preorder(bst b, void f(char *str));
